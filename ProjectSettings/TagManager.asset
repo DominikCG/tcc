@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BGSky
+    uniqueID: 3147530793
+    locked: 0
+  - name: BG3
+    uniqueID: 57398517
+    locked: 0
+  - name: BG2
+    uniqueID: 852917749
+    locked: 0
   - name: BG1
     uniqueID: 3223668217
     locked: 0
