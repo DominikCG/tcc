@@ -53,6 +53,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Plataform
+    uniqueID: 1685161167
+    locked: 0
+  - name: Player
+    uniqueID: 3547267189
+    locked: 0
   - name: Terrain
     uniqueID: 110460427
     locked: 0
