@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Config Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4338030499309180, guid: a69b9c178b47eda439b741b019d16389, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4338030499309183, guid: a69b9c178b47eda439b741b019d16389, type: 3}
       propertyPath: m_Camera
       value: 
@@ -400,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 1713723396909302003, guid: 2ec5567ebdd00d740b316b674e5f59ad, type: 3}
       propertyPath: m_Name
       value: Credits Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713723396909302003, guid: 2ec5567ebdd00d740b316b674e5f59ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713723396909302007, guid: 2ec5567ebdd00d740b316b674e5f59ad, type: 3}
       propertyPath: m_Pivot.x
