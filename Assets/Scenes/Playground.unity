@@ -40889,6 +40889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Board (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1217874147393825399, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: score
       value: 
@@ -40998,6 +41002,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1217874147393825396, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1154248981}
+    - target: {fileID: 1217874147393825396, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: stepDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825397, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -41067,8 +41079,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1154248981}
+    - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1450885995}
+    - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: boardSize.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
+      propertyPath: boardSize.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: tetrominoes.Array.size
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: tetrominoes.Array.data[1].tile
@@ -41100,7 +41128,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: be0a34e2a842ae742b4fa8541a5f9fcf, type: 2}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: tetrominoes.Array.data[0].tetromino
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: tetrominoes.Array.data[1].tetromino
