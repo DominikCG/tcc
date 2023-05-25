@@ -5,9 +5,10 @@ public class Piece : MonoBehaviour
     public Board board { get; private set; }
     public TetrominoData data { get; private set; }
     public Vector3Int[] cells { get; private set; }
-    public Vector3Int position { get; private set; }
+    public Vector3Int position { get; set; }
     public int rotationIndex { get; private set; }
 
+    public CountAux score;
     public float stepDelay = 1f;
     public float moveDelay = 0.1f;
     public float lockDelay = 0.5f;
@@ -44,23 +45,23 @@ public class Piece : MonoBehaviour
         // before it locks in place
         lockTime += Time.deltaTime;
 
-        // Handle rotation
-        // if (Input.GetKeyDown(KeyCode.Q)) {
-        //     Rotate(-1);
-        // } else if (Input.GetKeyDown(KeyCode.E)) {
-        //     Rotate(1);
-        // }
+        //Handle rotation
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            Rotate(-1);
+        } else if (Input.GetKeyDown(KeyCode.E)) {
+            Rotate(1);
+        }
 
-        // // Handle hard drop
-        // if (Input.GetKeyDown(KeyCode.Space)) {
-        //     HardDrop();
-        // }
+        // Handle hard drop
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            HardDrop();
+        }
 
-        // // Allow the player to hold movement keys but only after a move delay
-        // // so it does not move too fast
-        // if (Time.time > moveTime) {
-        //     HandleMoveInputs();
-        // }
+        // Allow the player to hold movement keys but only after a move delay
+        // so it does not move too fast
+        if (Time.time > moveTime) {
+            HandleMoveInputs();
+        }
 
         // Advance the piece to the next row every x seconds
         if (Time.time > stepTime) {
@@ -113,9 +114,11 @@ public class Piece : MonoBehaviour
 
     private void Lock()
     {
+        score.PopCount(10);
         board.Set(this);
-        board.ClearLines();
+        //board.ClearLines();
         board.SpawnPiece();
+
     }
 
     private bool Move(Vector2Int translation)

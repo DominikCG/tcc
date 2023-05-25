@@ -16,6 +16,7 @@ public static class Data
         { Tetromino.S, new Vector2Int[] { new Vector2Int( 0, 1), new Vector2Int( 1, 1), new Vector2Int(-1, 0), new Vector2Int( 0, 0) } },
         { Tetromino.T, new Vector2Int[] { new Vector2Int( 0, 1), new Vector2Int(-1, 0), new Vector2Int( 0, 0), new Vector2Int( 1, 0) } },
         { Tetromino.Z, new Vector2Int[] { new Vector2Int(-1, 1), new Vector2Int( 0, 1), new Vector2Int( 0, 0), new Vector2Int( 1, 0) } },
+        { Tetromino.DOT, new Vector2Int[] { Vector2Int.zero } }
     };
 
     private static readonly Vector2Int[,] WallKicksI = new Vector2Int[,] {
@@ -49,6 +50,7 @@ public static class Data
         { Tetromino.S, WallKicksJLOSTZ },
         { Tetromino.T, WallKicksJLOSTZ },
         { Tetromino.Z, WallKicksJLOSTZ },
+        { Tetromino.DOT, WallKicksJLOSTZ },
     };
 
 }

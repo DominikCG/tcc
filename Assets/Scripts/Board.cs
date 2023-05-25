@@ -5,15 +5,19 @@ public class Board : MonoBehaviour
 {
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
-
+    public Transform playerPos;
     public TetrominoData[] tetrominoes;
     public Vector2Int boardSize = new Vector2Int(10, 20);
     public Vector3Int spawnPosition = new Vector3Int(-1, 8, 0);
+    public CountAux score;
+    
+    private int randomXPos = 0;
 
     public RectInt Bounds {
         get
         {
-            Vector2Int position = new Vector2Int(-boardSize.x / 2, -boardSize.y / 2);
+            //Vector2Int position = new Vector2Int(-boardSize.x / 2, -boardSize.y / 2);
+            Vector2Int position = new Vector2Int(-boardSize.x / 2, -boardSize.y/2);
             return new RectInt(position, boardSize);
         }
     }
@@ -26,18 +30,55 @@ public class Board : MonoBehaviour
         for (int i = 0; i < tetrominoes.Length; i++) {
             tetrominoes[i].Initialize();
         }
+        // Chame o método para atualizar o Bounds após as peças serem inicializadas
+        UpdateBounds();
     }
 
     private void Start()
     {
         SpawnPiece();
+        //SpawnRandomTetromino();
     }
+
+    public void SpawnRandomTetromino()
+{
+    int randomIndex = Random.Range(0, tetrominoes.Length);
+    TetrominoData randomTetromino = tetrominoes[randomIndex];
+    int newXpos = Random.Range(-5, 5);
+    if(newXpos != randomXPos){
+        spawnPosition = new Vector3Int(newXpos,8,0);
+    }else{
+        if(newXpos == -5){
+            newXpos+=1;
+        }
+        else if(newXpos == 5){
+            newXpos-=1;
+        }else{
+            newXpos +=1;
+        }
+        spawnPosition = new Vector3Int(newXpos,8,0);
+    }
+    randomXPos = newXpos;
+
+    activePiece.Initialize(this, spawnPosition, randomTetromino);
+
+    if (IsValidPosition(activePiece, spawnPosition))
+    {
+        Set(activePiece);
+    }
+    else
+    {
+        GameOver();
+    }
+}
+
 
     public void SpawnPiece()
     {
+        
         int random = Random.Range(0, tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
-
+        spawnPosition = new Vector3Int(Random.Range(-4, 3),(int)playerPos.position.y+ 28,0);
         activePiece.Initialize(this, spawnPosition, data);
 
         if (IsValidPosition(activePiece, spawnPosition)) {
@@ -45,6 +86,26 @@ public class Board : MonoBehaviour
         } else {
             GameOver();
         }
+    }
+
+    private void UpdateBounds()
+    {
+
+    RectInt bounds = Bounds;
+
+    // Deslocar a base do tabuleiro para a posição 0, mantendo a altura original
+    int yOffset = -bounds.yMin;
+    bounds.yMin += yOffset;
+    bounds.yMax += yOffset;
+
+    // Atualizar a posição de spawn
+    spawnPosition.y += yOffset;
+
+    // Atualizar a posição da peça ativa
+    if (activePiece != null)
+    {
+        activePiece.position += new Vector3Int(0, yOffset, 0);
+    }
     }
 
     public void GameOver()
@@ -75,25 +136,34 @@ public class Board : MonoBehaviour
     public bool IsValidPosition(Piece piece, Vector3Int position)
     {
         RectInt bounds = Bounds;
-
-        // The position is only valid if every cell is valid
+    
+        // A posição é válida apenas se todas as células forem válidas
         for (int i = 0; i < piece.cells.Length; i++)
         {
             Vector3Int tilePosition = piece.cells[i] + position;
-
-            // An out of bounds tile is invalid
-            if (!bounds.Contains((Vector2Int)tilePosition)) {
+    
+            // Uma célula fora dos limites é inválida
+            if (!bounds.Contains((Vector2Int)tilePosition))
+            {
                 return false;
             }
-
-            // A tile already occupies the position, thus invalid
-            if (tilemap.HasTile(tilePosition)) {
+    
+            // Uma célula já ocupada por outra peça é inválida
+            if (tilemap.HasTile(tilePosition))
+            {
+                return false;
+            }
+    
+            // Uma célula abaixo da base fixa em 0 é inválida
+            if (tilePosition.y < 0)
+            {
                 return false;
             }
         }
-
+    
         return true;
     }
+
 
     public void ClearLines()
     {
@@ -103,10 +173,11 @@ public class Board : MonoBehaviour
         // Clear from bottom to top
         while (row < bounds.yMax)
         {
+            Debug.Log(row);
             // Only advance to the next row if the current is not cleared
             // because the tiles above will fall down when a row is cleared
             if (IsLineFull(row)) {
-                LineClear(row);
+                score.PopCount(1000);
             } else {
                 row++;
             }

@@ -48,7 +48,7 @@ public class Ghost : MonoBehaviour
         int current = position.y;
         int bottom = -mainBoard.boardSize.y / 2 - 1;
 
-        mainBoard.Clear(trackingPiece);
+        //mainBoard.Clear(trackingPiece);
 
         for (int row = current; row >= bottom; row--)
         {
