@@ -9,6 +9,6 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y + camYOffset, transform.position.z);
+        transform.position = new Vector3(0, player.position.y + camYOffset, transform.position.z);
     }
 }

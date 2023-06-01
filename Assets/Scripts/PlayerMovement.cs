@@ -10,16 +10,20 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private LayerMask jumpableGround;
-    private bool jumping = false;
+    private bool isWallSliding = false;
+    private bool isWallJumping = false;
+    private bool isJumping = false;
     private bool jumpStart = false;
 
+    public float wallJumpForce = 50f;
+    public float wallSlideSpeed = 2f;
+    public float moveSpeed = 7f;
+    public float jumpForce = 10f;
+
     private float dirX = 0f;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 10f;
 
-    private enum MovementState { idle, running, jumpStart, jumping, jumpLand}
+    private enum MovementState { idle, running, jumpStart, jumping, jumpLand }
 
-    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,31 +34,66 @@ public class PlayerMovement : MonoBehaviour
         Application.targetFrameRate = 30;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        // rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
-        // if (Input.GetButtonDown("Jump") && IsGrounded())
-        // {
-        //     jumpStart = true;
-        //     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        // }
-
-        if(Input.GetKey(KeyCode.LeftArrow)){
-            dirX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isWallSliding && !isWallJumping)
+        {
+            DoWallJump();
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
-            dirX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            dirX = -1f;
         }
-        if(Input.GetKeyDown(KeyCode.UpArrow)&& IsGrounded()){
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            dirX = 1f;
+        }
+        else
+        {
+            dirX = 0f;
+        }
+
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
+        {
             jumpStart = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && isWallSliding)
+        {
+            DoWallJump();
+        }
+
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         UpdateAnimationState();
+    }
+
+    private void FixedUpdate()
+    {
+        if (isJumping)
+        {
+            float wallJumpDirection = isWallSliding ? -Mathf.Sign(dirX) : 0f;
+            rb.AddForce(new Vector2(wallJumpDirection * wallJumpForce, jumpForce), ForceMode2D.Impulse);
+
+            isJumping = false;
+            isWallJumping = false;
+        }
+    }
+
+    public void DoWallJump()
+    {
+        if (isWallSliding)
+        {
+            isJumping = true;
+            isWallSliding = false;
+            isWallJumping = true;
+        }
     }
 
     private void UpdateAnimationState()
@@ -76,25 +115,41 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (jumping)
+        if (isJumping)
         {
             state = MovementState.jumping;
         }
 
-        if (jumping && IsGrounded())
+        if (isJumping && IsGrounded())
         {
             state = MovementState.jumpLand;
-            jumping = false;
+            isJumping = false;
         }
 
         if (jumpStart)
         {
             state = MovementState.jumpStart;
-            jumping = true;
+            isJumping = true;
             jumpStart = false;
         }
 
         anim.SetInteger("state", (int)state);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isWallSliding = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isWallSliding = false;
+        }
     }
 
     private bool IsGrounded()
