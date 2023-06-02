@@ -13,16 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private bool isWallSliding = false;
     private bool isWallJumping = false;
     private bool isJumping = false;
-    private bool jumpStart = false;
+    private bool canDoubleJump = false;
 
-    public float wallJumpForce = 50f;
+    public float wallJumpForce = 10f;
     public float wallSlideSpeed = 2f;
     public float moveSpeed = 7f;
     public float jumpForce = 10f;
 
     private float dirX = 0f;
 
-    private enum MovementState { idle, running, jumpStart, jumping, jumpLand }
+    private enum MovementState { idle, running, jumping }
 
     private void Start()
     {
@@ -59,19 +59,33 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            jumpStart = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && isWallSliding)
-        {
-            DoWallJump();
+            if (IsGrounded())
+            {
+                Jump();
+                canDoubleJump = true;
+            }
+            else if (canDoubleJump)
+            {
+                Jump();
+                canDoubleJump = false;
+            }
+            else if (isWallSliding && !isWallJumping)
+            {
+                DoWallJump();
+            }
         }
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         UpdateAnimationState();
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        isJumping = true;
     }
 
     private void FixedUpdate()
@@ -118,19 +132,6 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping)
         {
             state = MovementState.jumping;
-        }
-
-        if (isJumping && IsGrounded())
-        {
-            state = MovementState.jumpLand;
-            isJumping = false;
-        }
-
-        if (jumpStart)
-        {
-            state = MovementState.jumpStart;
-            isJumping = true;
-            jumpStart = false;
         }
 
         anim.SetInteger("state", (int)state);
