@@ -9,7 +9,7 @@ public enum Tetromino
 [System.Serializable]
 public struct TetrominoData
 {
-    public Tile tile;
+    public CustomTile customTile; // Substitua Tile por CustomTile
     public Tetromino tetromino;
 
     public Vector2Int[] cells { get; private set; }
@@ -20,5 +20,4 @@ public struct TetrominoData
         cells = Data.Cells[tetromino];
         wallKicks = Data.WallKicks[tetromino];
     }
-
 }
