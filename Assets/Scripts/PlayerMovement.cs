@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isWallJumping = false;
     private bool isJumping = false;
     private bool canDoubleJump = false;
+    private bool left = default;
 
     public float wallJumpForce = 10f;
     public float wallSlideSpeed = 2f;
@@ -21,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 10f;
 
     private float dirX = 0f;
+    [SerializeField] private bool isOnIce = false;
+    private float originalMoveSpeed;
 
     private enum MovementState { idle, running, jumping }
 
@@ -30,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        originalMoveSpeed = moveSpeed;
 
         Application.targetFrameRate = 30;
     }
@@ -43,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            left = true;
             dirX = -1f;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            left = false;
             dirX = 1f;
         }
         else
@@ -77,7 +84,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (isOnIce)
+        {
+            if(left){
+                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            }else{
+                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            }
+        }
+        else
+        {
+            rb.velocity = new Vector2(dirX * originalMoveSpeed, rb.velocity.y);
+        }
 
         UpdateAnimationState();
     }
@@ -140,8 +158,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
-        {
+        {   isOnIce = false;
             isWallSliding = true;
+        }
+        else if (collision.gameObject.CompareTag("Ice"))
+        {
+            isOnIce = true;
+            moveSpeed = originalMoveSpeed;
+        }else if(collision.gameObject.tag != "Ice")
+        {
+            isOnIce = false;
+            moveSpeed = originalMoveSpeed;
         }
     }
 
