@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
     private bool isWallSliding = false;
-    private bool isWallJumping = false;
     private bool isJumping = false;
     private bool canDoubleJump = false;
     private bool left = default;
@@ -41,11 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isWallSliding && !isWallJumping)
-        {
-            DoWallJump();
+        if(IsGrounded()){
+            isJumping = false;
         }
-
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             left = true;
@@ -78,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
                 canDoubleJump = false;
             }
-            else if (isWallSliding && !isWallJumping)
+            else if (isWallSliding)
             {
                 DoWallJump();
             }
@@ -87,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
         if (isOnIce)
         {
             if(left){
-                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(-moveSpeed * 0.6f, rb.velocity.y);
             }else{
-                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(moveSpeed * 0.6f, rb.velocity.y);
             }
         }
         else
@@ -106,26 +103,13 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
     }
 
-    private void FixedUpdate()
+    public void DoWallJump()
     {
-        if (isJumping)
-        {
             float wallJumpDirection = isWallSliding ? -Mathf.Sign(dirX) : 0f;
             rb.AddForce(new Vector2(wallJumpDirection * wallJumpForce, jumpForce), ForceMode2D.Impulse);
 
-            isJumping = false;
-            isWallJumping = false;
-        }
-    }
-
-    public void DoWallJump()
-    {
-        if (isWallSliding)
-        {
             isJumping = true;
             isWallSliding = false;
-            isWallJumping = true;
-        }
     }
 
     private void UpdateAnimationState()
@@ -161,14 +145,23 @@ public class PlayerMovement : MonoBehaviour
         {   isOnIce = false;
             isWallSliding = true;
         }
-        else if (collision.gameObject.CompareTag("Ice"))
+        if (collision.gameObject.CompareTag("Ice"))
         {
+            Debug.Log("entrou");
             isOnIce = true;
             moveSpeed = originalMoveSpeed;
-        }else if(collision.gameObject.tag != "Ice")
+        }
+        if(collision.gameObject.tag != "Ice")
         {
             isOnIce = false;
             moveSpeed = originalMoveSpeed;
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ice"))
+        {
+            isOnIce = true;
         }
     }
 
@@ -178,10 +171,26 @@ public class PlayerMovement : MonoBehaviour
         {
             isWallSliding = false;
         }
+
+        if (collision.gameObject.CompareTag("Ice"))
+        {   
+            Debug.Log("saiu do gelo");
+            StartCoroutine(IceDelay(1f));
+        }
+
     }
 
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+
+    private IEnumerator IceDelay(float delayTime)
+    {
+        Debug.Log("entrou no delay");
+        yield return new WaitForSeconds(delayTime);
+        Debug.Log("saiu");
+        isOnIce = false;
+    }
+
 }
