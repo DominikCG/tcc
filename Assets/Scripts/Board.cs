@@ -48,7 +48,7 @@ public class Board : MonoBehaviour
         int newXpos = Random.Range(-5, 5);
         if (newXpos != randomXPos)
         {
-            spawnPosition = new Vector3Int(newXpos, 8, 0);
+            spawnPosition = new Vector3Int(newXpos, 10, 0);
         }
         else
         {
@@ -60,11 +60,8 @@ public class Board : MonoBehaviour
             {
                 newXpos -= 1;
             }
-            else
-            {
-                newXpos += 1;
-            }
-            spawnPosition = new Vector3Int(newXpos, 8, 0);
+
+            spawnPosition = new Vector3Int(newXpos, 10, 0);
         }
         randomXPos = newXpos;
 
