@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(canTakeDmg){
             canTakeDmg = false;
+            timer = 0f;
             currentHealth -= damageAmount;
 
             // Atualizar a exibição dos corações

@@ -193,4 +193,8 @@ public class PlayerMovement : MonoBehaviour
         isOnIce = false;
     }
 
+    public void Warp(Vector2 newPos){
+        this.transform.position = newPos;
+    }
+
 }
