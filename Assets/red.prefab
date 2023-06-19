@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3238849028340864016}
   - component: {fileID: -1905001928046619593}
   - component: {fileID: -8093671315107782562}
+  - component: {fileID: 3064772423208180820}
   m_Layer: 6
   m_Name: red
   m_TagString: Tilemap
@@ -75,6 +76,18 @@ MonoBehaviour:
   player: {fileID: 0}
   dmg: 1
   contactTimeThreshold: 3
+--- !u!114 &3064772423208180820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331805012571110751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f09ca51ecf2904faeaaacba6df8460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4141420719993557510
 GameObject:
   m_ObjectHideFlags: 0
