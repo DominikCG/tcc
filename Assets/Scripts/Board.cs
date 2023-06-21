@@ -81,7 +81,7 @@ public class Board : MonoBehaviour
     {
         int random = Random.Range(0, tetrominoes.Length);
         TetrominoData data = tetrominoes[random];
-        spawnPosition = new Vector3Int(Random.Range(-4, 3), (int)playerPos.position.y + 28, 0);
+        spawnPosition = new Vector3Int(Random.Range(-4, 4), (int)playerPos.position.y + 28, 0);
         activePiece.Initialize(this, spawnPosition, data);
 
         if (IsValidPosition(activePiece, spawnPosition))
