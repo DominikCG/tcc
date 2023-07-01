@@ -14,12 +14,8 @@ public class UIManager : MonoBehaviour
 
     public void Awake()
     {
-        if (GameManager.Instance.isLevelScene)
-        {
-
             nextbutton.gameObject.SetActive(false);
             retrybutton.gameObject.SetActive(false);
-        }
     }
     public void PlayButton()
     {

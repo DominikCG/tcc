@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_Water Variant
+  m_Shader: {fileID: 4800000, guid: 8addf475784134c42bad165ae2addb4b, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DepthRampTex:
+        m_Texture: {fileID: 2800000, guid: d9c0108a0c689864e812f5531197846e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EdgeTex:
+        m_Texture: {fileID: 2800000, guid: 27e56c7b404d9104ea7050a9adf05e39, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a99ea51f55b292744bd9fe911efd4e73, type: 3}
+        m_Scale: {x: 4.04, y: 4.04}
+        m_Offset: {x: -1.5, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 205f9d4845af467458c81882820c69af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTex:
+        m_Texture: {fileID: 2800000, guid: d3503e5ef41205047abac1ec68bef934, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DepthFactor: 1240.7
+    - _DistorctionFactor: 0.44
+    - _EdgeIntensity: 1.5
+    - _Glossiness: 0
+    - _Metallic: 0
+    - _Mitigation: 1
+    - _Scale: 1
+    - _SpeedX: 1
+    - _SpeedY: 1
+    m_Colors:
+    - _Color: {r: 1, g: 0.025662847, b: 0, a: 1}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeIntensity: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

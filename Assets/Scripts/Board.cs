@@ -13,7 +13,7 @@ public class Board : MonoBehaviour
 
     private int randomXPos = 0;
 
-    public RectInt Bounds
+     public RectInt Bounds
     {
         get
         {
@@ -31,14 +31,21 @@ public class Board : MonoBehaviour
         {
             tetrominoes[i].Initialize();
         }
+
         // Chame o método para atualizar o Bounds após as peças serem inicializadas
         UpdateBounds();
     }
 
     private void Start()
     {
-        SpawnPiece();
-        //SpawnRandomTetromino();
+        if (playerPos != null)
+        {
+            SpawnPiece();
+        }
+        else
+        {
+            Debug.LogError("Player position is not assigned to Board!");
+        }
     }
 
     public void SpawnRandomTetromino()
