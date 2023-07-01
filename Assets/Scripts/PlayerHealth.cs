@@ -16,6 +16,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Trap"))
+        {
+            TakeDamage(1);
+        }
+    }
+
     public void Update(){
         timer += Time.deltaTime;
         if(timer >= noDmgTime){
