@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             // O personagem morreu, faça algo aqui
+            GameManager.Instance.EndLevel(false);
         }
     }
 

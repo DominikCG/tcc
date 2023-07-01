@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private SceneController sceneController;
-    private UIManager uiManager;
-
+    [SerializeField]private SceneController sceneController;
+    [SerializeField]private UIManager uiManager;
+    [SerializeField] private GameObject board;
     public bool isLevelScene;
 
     private void Awake()
@@ -45,4 +46,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public void QuitGame() => Application.Quit();
+
+    public void EndLevel(bool WIN)
+    {
+        board.SetActive(false);
+        uiManager.EndGamePanel(WIN);
+
+    }
 }
