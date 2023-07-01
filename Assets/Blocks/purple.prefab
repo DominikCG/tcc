@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1905001928046619593}
   - component: {fileID: -2283238461455407642}
   m_Layer: 6
-  m_Name: blue
+  m_Name: purple
   m_TagString: Tilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3f82b3ad9020ed3448c74b89545d893c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51a1485338acae84585e3ea525804668, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

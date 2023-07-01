@@ -138213,8 +138213,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 231581665}
   tetrominoes:
-  - customTile: {fileID: 11400000, guid: c1e4e911fcc150c459838b8654aadccb, type: 2}
+  - customTile: {fileID: 11400000, guid: 0b11ed46cc7f7024685da03608d677c3, type: 2}
     tetromino: 3
+  - customTile: {fileID: 11400000, guid: cc19587e611a8124496866bf12861587, type: 2}
+    tetromino: 5
+  - customTile: {fileID: 11400000, guid: ddb0b34a5a167e24b8df1a58420a1f55, type: 2}
+    tetromino: 1
+  - customTile: {fileID: 11400000, guid: acd00fc8ef02a694e823bda724171b42, type: 2}
+    tetromino: 4
+  - customTile: {fileID: 11400000, guid: 3994ef6bd24ec924ab48cea73d020cf3, type: 2}
+    tetromino: 6
   boardSize: {x: 10, y: 200}
   spawnPosition: {x: -1, y: 8, z: 0}
   score: {fileID: 1198812212}

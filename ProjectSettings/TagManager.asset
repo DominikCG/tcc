@@ -10,6 +10,7 @@ TagManager:
   - Spawn_slider_time
   - Game_slider_time
   - Ice
+  - Trap
   layers:
   - Default
   - TransparentFX
