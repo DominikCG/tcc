@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private SceneController sceneController;
     [SerializeField]private UIManager uiManager;
     [SerializeField] private GameObject board;
-    public bool isLevelScene;
+    public bool isLevelScene = false;
 
     private void Awake()
     {
