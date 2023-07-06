@@ -117944,6 +117944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4488679824026747638, guid: 3cb6b948e0c58a84dbfe8cc3fd187305, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4488679824026747639, guid: 3cb6b948e0c58a84dbfe8cc3fd187305, type: 3}
       propertyPath: m_Camera
       value: 
