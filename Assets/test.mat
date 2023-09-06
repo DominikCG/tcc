@@ -12,6 +12,7 @@ Material:
   m_ValidKeywords:
   - _COLORBLEED_ON
   - _DISPLAY_COLOR
+  - _OVERLAY_ON
   - _OVERSCAN_ON
   - _PIP_ON
   m_InvalidKeywords: []
@@ -69,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OverlayTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1086cf090829c6445afc931817fa3423, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -81,16 +82,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowMask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fc42074087dbd174c8299f9a2a183a83, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _Binary: 0
-    - _Bleed: 1.081
+    - _Bleed: 0.768
     - _BumpScale: 1
     - _ColorBleed: 1
-    - _Composite: 0
+    - _Composite: -0.06
     - _Cutoff: 0.5
     - _DepthFactor: 1
     - _DetailNormalMapScale: 1
@@ -101,14 +102,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.421
     - _GlossyReflections: 1
-    - _Height: 8
-    - _Intensity: 0.64
+    - _Height: 451
+    - _Intensity: 3.12
     - _Lcd: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Overlay: 0
-    - _OverlayAlpha: 0
+    - _Overlay: 1
+    - _OverlayAlpha: 1
     - _Overscan: 1
     - _OverscanX: 0
     - _OverscanY: 0
@@ -121,7 +122,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 398
+    - _Width: 633
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

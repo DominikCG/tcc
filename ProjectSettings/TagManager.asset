@@ -11,6 +11,7 @@ TagManager:
   - Game_slider_time
   - Ice
   - Trap
+  - cameraBG
   layers:
   - Default
   - TransparentFX

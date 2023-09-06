@@ -5,13 +5,13 @@ public class SceneController : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
+        //if (Input.GetKeyDown(KeyCode.F1))
+       // {
             // Ação a ser executada quando a tecla F1 for pressionada
-            Debug.Log("Tecla F1 pressionada!");
-            NextScene();
+       //     Debug.Log("Tecla F1 pressionada!");
+        //    NextScene();
             // Insira aqui o código que você deseja executar quando a tecla F1 for pressionada
-        }
+       // }
     }
 
     public void ChangeScene(int index)
