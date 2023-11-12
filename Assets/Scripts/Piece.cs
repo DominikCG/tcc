@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Piece : MonoBehaviour
 {
@@ -17,6 +18,35 @@ public class Piece : MonoBehaviour
     private float moveTime;
     private float lockTime;
 
+    private Vector2 moveTargetPointerInput;
+    [SerializeField] private InputActionReference move;
+
+    
+    private void OnEnable()
+    {
+        move.action.performed += MoveInput;
+    }
+    private void OnDisable()
+    {
+        move.action.performed -= MoveInput;
+    }
+    private void MoveInput(InputAction.CallbackContext callbackContext)
+    {
+        
+        Debug.Log("move input recebeu" + callbackContext);
+        Vector2 input = callbackContext.ReadValue<Vector2>();
+
+        float joystickThreshold = 0.2f; // Ajuste este valor conforme necessário
+        if (input.magnitude > joystickThreshold)
+        {
+            moveTargetPointerInput = input;
+        }
+        else
+        {
+            moveTargetPointerInput = Vector2.zero;
+        }
+
+    }
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.data = data;
@@ -46,20 +76,23 @@ public class Piece : MonoBehaviour
         lockTime += Time.deltaTime;
 
         //Handle rotation
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (moveTargetPointerInput.y > 0)
+        {
             Rotate(-1);
-        } else if (Input.GetKeyDown(KeyCode.E)) {
-            Rotate(1);
         }
+        //else if (Input.GetKeyDown(KeyCode.E))
+        //{
+            //    Rotate(1);
+            //}
 
-        // Handle hard drop
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            HardDrop();
-        }
+            //// Handle hard drop
+            //if (Input.GetKeyDown(KeyCode.Space)) {
+            //    HardDrop();
+            //}
 
-        // Allow the player to hold movement keys but only after a move delay
-        // so it does not move too fast
-        if (Time.time > moveTime) {
+            // Allow the player to hold movement keys but only after a move delay
+            // so it does not move too fast
+            if (Time.time > moveTime) {
             HandleMoveInputs();
         }
 
@@ -74,18 +107,22 @@ public class Piece : MonoBehaviour
     private void HandleMoveInputs()
     {
         // Soft drop movement
-        if (Input.GetKey(KeyCode.S))
+        if (moveTargetPointerInput.y < 0)
         {
-            if (Move(Vector2Int.down)) {
+            if (Move(Vector2Int.down))
+            {
                 // Update the step time to prevent double movement
                 stepTime = Time.time + stepDelay;
             }
         }
 
         // Left/right movement
-        if (Input.GetKey(KeyCode.A)) {
+        if (moveTargetPointerInput.x < 0)
+        {
             Move(Vector2Int.left);
-        } else if (Input.GetKey(KeyCode.D)) {
+        }
+        else if (moveTargetPointerInput.x > 0)
+        {
             Move(Vector2Int.right);
         }
     }

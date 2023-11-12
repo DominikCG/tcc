@@ -7,7 +7,7 @@ public class Board : MonoBehaviour
     public Piece activePiece { get; private set; }
     public Transform playerPos;
     public TetrominoData[] tetrominoes;
-    public Vector2Int boardSize = new Vector2Int(10, 20);
+    public Vector2Int boardSize = new Vector2Int(10, 21);
     public Vector3Int spawnPosition = new Vector3Int(-1, 8, 0);
     public CountAux score;
 
@@ -123,7 +123,7 @@ public class Board : MonoBehaviour
     public void GameOver()
     {
         tilemap.ClearAllTiles();
-
+        GameManager.Instance.EndLevel(false);
         // Do anything else you want on game over here..
     }
 

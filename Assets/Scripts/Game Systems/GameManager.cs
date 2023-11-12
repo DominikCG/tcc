@@ -53,4 +53,5 @@ public class GameManager : MonoBehaviour
         uiManager.EndGamePanel(WIN);
 
     }
+
 }
