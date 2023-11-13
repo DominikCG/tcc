@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         endGamePanel.SetActive(true);
         if (STATUS)
         {
-            title.text = "Congratulations!";
+            title.text = "Parabéns!";
             finalScore.text = score.text;
             nextbutton.gameObject.SetActive(true);
         }

@@ -60985,11 +60985,11 @@ PrefabInstance:
       objectReference: {fileID: 1690568605}
     - target: {fileID: 2393904664852740404, guid: 53506f18dc776a0458f5b3939386813b, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.0007812679
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2393904664852740404, guid: 53506f18dc776a0458f5b3939386813b, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99843746
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3483055232296067843, guid: 53506f18dc776a0458f5b3939386813b, type: 3}
       propertyPath: m_Name
@@ -138072,7 +138072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1080133557079405965, guid: 0e5f14ed33ceaa049a99384e13405749, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 1080133557079405965, guid: 0e5f14ed33ceaa049a99384e13405749, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138163,6 +138163,7 @@ MonoBehaviour:
   stepDelay: 0.5
   moveDelay: 0.1
   lockDelay: 0.5
+  move: {fileID: 0}
 --- !u!4 &1217874147246490105
 Transform:
   m_ObjectHideFlags: 0
