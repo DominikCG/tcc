@@ -75,7 +75,7 @@ MonoBehaviour:
     tetromino: 5
   - customTile: {fileID: 0}
     tetromino: 6
-  boardSize: {x: 10, y: 20}
+  boardSize: {x: 11, y: 200}
   spawnPosition: {x: -1, y: 8, z: 0}
   score: {fileID: 0}
 --- !u!114 &1217874147393825396
@@ -94,6 +94,7 @@ MonoBehaviour:
   stepDelay: 1
   moveDelay: 0.1
   lockDelay: 0.5
+  move: {fileID: 0}
 --- !u!1 &1217874148753576706
 GameObject:
   m_ObjectHideFlags: 0

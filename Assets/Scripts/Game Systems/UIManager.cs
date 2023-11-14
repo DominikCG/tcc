@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject endGamePanel = default;
+    [SerializeField] private GameObject mainMenuPanel = default;
     [SerializeField] private TMP_Text title= default;
     [SerializeField] private TMP_Text score= default;
     [SerializeField] private TMP_Text finalScore= default;
@@ -27,7 +28,7 @@ public class UIManager : MonoBehaviour
         endGamePanel.SetActive(true);
         if (STATUS)
         {
-            title.text = "Parabéns!";
+            title.text = "Congratulations!";
             finalScore.text = score.text;
             nextbutton.gameObject.SetActive(true);
         }
@@ -38,5 +39,10 @@ public class UIManager : MonoBehaviour
             retrybutton.gameObject.SetActive(true);
         }
 
+    }
+
+    public void MainMenuPanel()
+    {
+        mainMenuPanel.SetActive(!mainMenuPanel.activeSelf);
     }
 }

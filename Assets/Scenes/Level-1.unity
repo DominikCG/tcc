@@ -61059,6 +61059,10 @@ PrefabInstance:
       propertyPath: isLevelScene
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8004694786006768422, guid: 53506f18dc776a0458f5b3939386813b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -193.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53506f18dc776a0458f5b3939386813b, type: 3}
 --- !u!1 &830608845
@@ -89629,7 +89633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: boardSize.x
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1217874147393825403, guid: c0c7efa2b37599c418b66df39d3cb0a3, type: 3}
       propertyPath: boardSize.y
@@ -138144,7 +138148,7 @@ MonoBehaviour:
     tetromino: 4
   - customTile: {fileID: 11400000, guid: 3994ef6bd24ec924ab48cea73d020cf3, type: 2}
     tetromino: 6
-  boardSize: {x: 10, y: 200}
+  boardSize: {x: 11, y: 200}
   spawnPosition: {x: -1, y: 8, z: 0}
   score: {fileID: 1198812212}
 --- !u!114 &1217874147246490104
