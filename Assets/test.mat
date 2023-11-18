@@ -102,7 +102,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.421
     - _GlossyReflections: 1
-    - _Height: 613
+    - _Height: 330
     - _Intensity: 3.9
     - _Lcd: 0
     - _Metallic: 0
@@ -122,7 +122,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 945
+    - _Width: 555
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

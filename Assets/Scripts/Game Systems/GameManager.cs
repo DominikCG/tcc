@@ -49,6 +49,14 @@ public class GameManager : MonoBehaviour
 
     public void EndLevel(bool WIN)
     {
+        if (WIN)
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.LevelCompleted);
+        }
+        else
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.GameOver);
+        }
         board.SetActive(false);
         uiManager.EndGamePanel(WIN);
 

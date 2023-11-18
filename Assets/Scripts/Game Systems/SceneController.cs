@@ -3,6 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.LevelBGM2);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.LevelBGM3);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.LevelBGM4);
+        }
+        else
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.LevelBGM);
+        }
+    }
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.F1))

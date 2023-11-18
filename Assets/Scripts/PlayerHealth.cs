@@ -35,12 +35,14 @@ public class PlayerHealth : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= noDmgTime){
             canTakeDmg = true;
+            spriteRenderer.enabled = true;
         }
     }
 
     public void TakeDamage(int damageAmount)
     {
         if(canTakeDmg){
+            AudioManager.Instance.PlayAudio(AudioClipID.Damage);
             canTakeDmg = false;
             timer = 0f;
             currentHealth -= damageAmount;
@@ -62,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
         {
             spriteRenderer.enabled = !spriteRenderer.enabled;
         }
+        
     }
     public void Heal(int healAmount)
     {

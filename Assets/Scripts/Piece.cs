@@ -160,6 +160,7 @@ public class Piece : MonoBehaviour
     private void Lock()
     {
         score.PopCount(10);
+        AudioManager.Instance.PlayAudio(AudioClipID.LockPiece);
         board.Set(this);
         //board.ClearLines();
         board.SpawnPiece();

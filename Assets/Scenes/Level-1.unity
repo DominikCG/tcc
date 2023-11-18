@@ -138164,10 +138164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 1198812212}
-  stepDelay: 0.5
+  stepDelay: 0.3
   moveDelay: 0.1
   lockDelay: 0.5
-  move: {fileID: 0}
+  move: {fileID: 8248941256085372966, guid: f528aea3dc8720f4da4792e7a7a157bf, type: 3}
 --- !u!4 &1217874147246490105
 Transform:
   m_ObjectHideFlags: 0

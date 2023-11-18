@@ -695,7 +695,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 509a1cd6736ddea419330bafab1d2d7b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1116,6 +1116,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2989815646318611189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1262,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3324330741626141605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1388,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4475d10b4f714c9448190a04857f4e66, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1511,6 +1535,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2281,7 +2317,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 80c55706b0321e84fbd1705f0d560619, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2416,7 +2452,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8f0e9955939d8de4da2400c889a10e8c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2796,6 +2832,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3224,7 +3272,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: d37fe2c985d1c244e8ecf8b779cfebc2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3279,6 +3327,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1539049268069661016}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: MainMenuPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3817,6 +3877,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6072287504042992756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4025,7 +4097,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 827961db90e7a0447a61d3d747de254c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4266,7 +4338,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 653b73a5b50d39442b570992b882dd5c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5046,6 +5118,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1970042968519928807}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayUIButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7878816657652544033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,7 +5346,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5920,6 +6004,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 8662896695372420509}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: title
+      value: 
+      objectReference: {fileID: 5210325303178812610}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: finalScore
+      value: 
+      objectReference: {fileID: 3515148131089809966}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: nextbutton
+      value: 
+      objectReference: {fileID: 2663413775789880584}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: retrybutton
+      value: 
+      objectReference: {fileID: 8981442302627200221}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
+      propertyPath: endGamePanel
+      value: 
+      objectReference: {fileID: 5783157365099287093}
+    - target: {fileID: 2486771730380170381, guid: 1cef970885c03634886f0145c1f34cd9, type: 3}
       propertyPath: mainMenuPanel
       value: 
       objectReference: {fileID: 3619013356327125326}
@@ -6001,15 +6109,34 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4922173089996085790, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
-      propertyPath: bgmAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5478350743928333184, guid: f1ef35d64c8561e4f973a195d3b43282, type: 2}
+      propertyPath: audioDataList.Array.data[7].loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4922173089996085790, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
-      propertyPath: sfxAudioMixerGroup
-      value: 
-      objectReference: {fileID: 271919408286101952, guid: f1ef35d64c8561e4f973a195d3b43282, type: 2}
+      propertyPath: audioDataList.Array.data[8].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922173089996085790, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
+      propertyPath: audioDataList.Array.data[9].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922173089996085790, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
+      propertyPath: audioDataList.Array.data[10].loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
+--- !u!114 &1970042968519928807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4922173089996085790, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}
+  m_PrefabInstance: {fileID: 6852769978279981561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f09c5f5d1731f84996e4b1c4db12bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5187016110910016848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1793020166273236137, guid: 52f275a88b5b11d40a3ee95d8740fb41, type: 3}

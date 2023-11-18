@@ -93,7 +93,7 @@ MonoBehaviour:
   score: {fileID: 0}
   stepDelay: 1
   moveDelay: 0.1
-  lockDelay: 0.5
+  lockDelay: 0.2
   move: {fileID: 0}
 --- !u!1 &1217874148753576706
 GameObject:

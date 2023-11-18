@@ -139,10 +139,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        AudioManager.Instance.PlayAudio(AudioClipID.Jump);
         if (isJumping)
         {
             isDoubleJumping = true;
-
         }
         
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -223,6 +223,10 @@ public class PlayerMovement : MonoBehaviour
             isOnIce = false;
             moveSpeed = originalMoveSpeed;
         }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            AudioManager.Instance.PlayAudio(AudioClipID.Grounded);
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -253,6 +257,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
         {
+            
             hasBeenGrounded = true;
         }
 

@@ -44,6 +44,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f09c5f5d1731f84996e4b1c4db12bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioDataList: []
-  bgmAudioMixerGroup: {fileID: 0}
-  sfxAudioMixerGroup: {fileID: 0}
+  audioDataList:
+  - ID: 2
+    audioClip: {fileID: 8300000, guid: c65665352f5d5a2438fda5bff3520a82, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 10
+    audioClip: {fileID: 8300000, guid: ed8d90cc621a53d4b88122357a8a39d3, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 7
+    audioClip: {fileID: 8300000, guid: f4d8ef0f48940144ebc410f18ae6c69d, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 9
+    audioClip: {fileID: 8300000, guid: abc5e7a571fa784408ec432d64a5e99c, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 8
+    audioClip: {fileID: 8300000, guid: 44dda9d72db34414bb741de351ea60ca, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 11
+    audioClip: {fileID: 8300000, guid: a5130f644b57de541948d60adb067a48, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 6
+    audioClip: {fileID: 8300000, guid: 922950f0715891542ba05205b971e43b, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 1
+    audioClip: {fileID: 8300000, guid: 7131612932c2fd040a81d1548b166d8d, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 12
+    audioClip: {fileID: 8300000, guid: e501af8affdf2884a9efe1960f5d4e05, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 13
+    audioClip: {fileID: 8300000, guid: c25bac45f4865834682e204794f861bf, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  - ID: 14
+    audioClip: {fileID: 8300000, guid: 360860f7d4b055c47be6dc8d5bfd78fd, type: 3}
+    audioSource: {fileID: 0}
+    volume: 0.2
+    loop: 0
+  bgmAudioMixerGroup: {fileID: -5478350743928333184, guid: f1ef35d64c8561e4f973a195d3b43282, type: 2}
+  sfxAudioMixerGroup: {fileID: 271919408286101952, guid: f1ef35d64c8561e4f973a195d3b43282, type: 2}

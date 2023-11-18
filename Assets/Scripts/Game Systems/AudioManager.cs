@@ -12,11 +12,14 @@ public enum AudioClipID
     HUDNotification,
     LevelStart,
     LevelCompleted,
-    InteractionSuccess,
-    InteractionFail,
-    Timer,
-    EndTimer,
     GameOver,
+    Damage,
+    Jump,
+    LockPiece,
+    Grounded,
+    LevelBGM2,
+    LevelBGM3,
+    LevelBGM4
 }
 
 public class AudioManager : MonoBehaviour
@@ -81,7 +84,18 @@ public class AudioManager : MonoBehaviour
         AudioSource audioSource = audioData.audioSource;
         audioSource.Play();
     }
+    public void PlayUIButtonAudio()
+    {
+        AudioData audioData = audioDataList.Find(data => data.ID == AudioClipID.ClickUI);
 
+        if (audioData == null)
+        {
+            return;
+        }
+
+        AudioSource audioSource = audioData.audioSource;
+        audioSource.Play();
+    }
     public void StopAudio(AudioClipID audioID)
     {
         AudioData audioData = audioDataList.Find(data => data.ID == audioID);
