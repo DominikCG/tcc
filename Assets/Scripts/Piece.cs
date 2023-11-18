@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,8 +21,8 @@ public class Piece : MonoBehaviour
 
     private Vector2 moveTargetPointerInput;
     [SerializeField] private InputActionReference move;
+    private bool canRotate =true;
 
-    
     private void OnEnable()
     {
         move.action.performed += MoveInput;
@@ -76,9 +77,11 @@ public class Piece : MonoBehaviour
         lockTime += Time.deltaTime;
 
         //Handle rotation
-        if (moveTargetPointerInput.y > 0)
+        if (moveTargetPointerInput.y > 0 && canRotate)
         {
+            canRotate = false;
             Rotate(-1);
+            StartCoroutine(RotateDelay(0.3f));
         }
         //else if (Input.GetKeyDown(KeyCode.E))
         //{
@@ -103,7 +106,12 @@ public class Piece : MonoBehaviour
 
         board.Set(this);
     }
+    IEnumerator RotateDelay(float Delay)
+    {
+        yield return new WaitForSeconds(Delay);
 
+        canRotate = true;
+    }
     private void HandleMoveInputs()
     {
         // Soft drop movement

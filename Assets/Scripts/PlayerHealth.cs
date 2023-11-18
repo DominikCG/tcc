@@ -11,8 +11,15 @@ public class PlayerHealth : MonoBehaviour
     private bool canTakeDmg = true;
     public float noDmgTime = 3f;
     private float timer = 0f;
+    private SpriteRenderer spriteRenderer;
+    public float taxaDePiscar = 0.1f; // Intervalo entre os piscar
+    private bool spriteVisivel = true;
+
     private void Start()
     {
+        // Obtém a referência do componente SpriteRenderer
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         currentHealth = maxHealth;
     }
 
@@ -37,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
             canTakeDmg = false;
             timer = 0f;
             currentHealth -= damageAmount;
-
+            InvokeRepeating("Piscar", 0f, taxaDePiscar);
             // Atualizar a exibição dos corações
             UpdateUI();
         }
@@ -49,6 +56,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    void Piscar()
+    {
+        if (!canTakeDmg)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+        }
+    }
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;

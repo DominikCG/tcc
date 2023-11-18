@@ -156,7 +156,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  noDmgTime: 3
+  noDmgTime: 2
 --- !u!114 &1080133557079405962
 MonoBehaviour:
   m_ObjectHideFlags: 0
